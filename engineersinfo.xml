@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="firstCE" class="mainpackage.ComputerEngineer">
+		<property name="name" value="${firstCE.name}" />
+		<property name="pw" value="${firstCE.pw}" />
+	</bean>
+	
+	<bean id="secondCE" class="mainpackage.ComputerEngineer">
+		<property name="name" value="${secondCE.name}" />
+		<property name="pw" value="${secondCE.pw}" />
+	</bean>
+	
+	<bean id="thirdCE" class="mainpackage.ComputerEngineer">
+		<property name="name" value="${thirdCE.name}" />
+		<property name="pw" value="${thirdCE.pw}" />
+	</bean>
+	
+	<bean id="fourthCE" class="mainpackage.ComputerEngineer">
+		<property name="name" value="${fourthCE.name}" />
+		<property name="pw" value="${fourthCE.pw}" />
+	</bean>
+	
+	<bean id="fifthCE" class="mainpackage.ComputerEngineer">
+		<property name="name" value="${fifthCE.name}" />
+		<property name="pw" value="${fifthCE.pw}" />
+	</bean>
+	
+	<bean id="sixthCE" class="mainpackage.ComputerEngineer">
+		<property name="name" value="${sixthCE.name}" />
+		<property name="pw" value="${sixthCE.pw}" />
+	</bean>
+	
+	<bean id="seventhCE" class="mainpackage.ComputerEngineer">
+		<property name="name" value="${seventhCE.name}" />
+		<property name="pw" value="${seventhCE.pw}" />
+	</bean>
+	
+	<bean id="firstE" class="mainpackage.Engineer">
+		<property name="name" value="${firstE.name}" />
+		<property name="pw" value="${firstE.pw}" />
+	</bean>
+	
+	<bean id="secondE" class="mainpackage.Engineer">
+		<property name="name" value="${secondE.name}" />
+		<property name="pw" value="${secondE.pw}" />
+	</bean>
+	
+	<bean id="thirdE" class="mainpackage.Engineer">
+		<property name="name" value="${thirdE.name}" />
+		<property name="pw" value="${thirdE.pw}" />
+	</bean>
+	
+	<bean id="fourthE" class="mainpackage.Engineer">
+		<property name="name" value="${fourthE.name}" />
+		<property name="pw" value="${fourthE.pw}" />
+	</bean>
+	
+	<bean id="engineers" class="mainpackage.Engineers">
+		<property name="ce1" ref="firstCE"/>
+		<property name="ce2" ref="secondCE"/>
+		<property name="ce3" ref="thirdCE"/>
+		<property name="ce4" ref="fourthCE"/>
+		<property name="ce5" ref="fifthCE"/>
+		<property name="ce6" ref="sixthCE"/>
+		<property name="ce7" ref="seventhCE"/>
+		<property name="e1" ref="firstE"/>
+		<property name="e2" ref="secondE"/>
+		<property name="e3" ref="thirdE"/>
+		<property name="e4" ref="fourthE"/>
+	</bean>
+	
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    	<property name="location" value="classpath:nameandpw.properties" />
+	</bean>
+	
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+		 		<value>nameandpw</value>
+			</list>
+		</property>
+	</bean>
+	
+</beans>
